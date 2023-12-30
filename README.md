@@ -55,14 +55,16 @@ threshold = 0.2
 if cosine_distance > threshold:
     print("The slices are different enough.")
 else:
-    print("The slices are too similar.") ```
+    print("The slices are too similar.")
+```
+
 
 # Files
 Input File: input.txt
 This text file contains the input text to be processed.
 
 Output Slices: slices_output.txt
-The generated slices are saved in this text file./due to the size, the best option is displaying by file/
+The generated slices are saved in this text file./due to the size, the best option is to display by file/
 
 
 # Results
