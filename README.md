@@ -17,8 +17,20 @@ The method is based on the following pipeline:
 The algorithm utilizes natural language processing techniques, including:
 
 - Tokenization
+```python
+    words = nltk.word_tokenize(text)
+    words = [word.lower() for word in words if word.isalnum()]
+```
 - Stopword elimination
+```python
+  stop_words = set(stopwords.words('english'))
+  words = [word for word in words if word not in stop_words]
+```
 - Lemmatization
+```python
+  lemmatizer = WordNetLemmatizer()
+  words = [lemmatizer.lemmatize(word) for word in words]
+```
 - Cosine similarity based on TF-IDF representation of text slices
 
 ## Cosine Similarity and Threshold Logic
