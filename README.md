@@ -1,7 +1,5 @@
-# NLP SECOND ASSIGNEMTN 
+# NLP Second Assignment
 Implementation of an algorithm to generate slicing of excessive context window for ChatGPT 3.5
-
-# ChatGPT 3.5 - Context Window Slicing
 
 ## Overview
 
