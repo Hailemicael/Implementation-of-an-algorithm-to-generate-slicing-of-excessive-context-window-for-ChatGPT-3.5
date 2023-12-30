@@ -1,5 +1,7 @@
 # NLP SECOND ASSIGNEMTN 
-implement an algorithm to generate slicing of excessive context window for ChatGPT 3.5
+Implementation of an algorithm to generate slicing of excessive context window for ChatGPT 3.5
+
+# ChatGPT 3.5 - Context Window Slicing
 
 ## Overview
 
@@ -27,7 +29,7 @@ The cosine similarity is employed to compare two adjacent slices based on the ba
 
 ### Cosine Similarity and Threshold Example
 
-Here's a simple example of how cosine similarity and threshold logic might be implemented in Python:
+Here's how cosine similarity and threshold logic are implemented in Python:
 
 ```python
 from sklearn.feature_extraction.text import TfidfVectorizer
@@ -41,3 +43,29 @@ slice2 = "Another slice with some different content."
 processed_slice1 = preprocess_text(slice1)
 processed_slice2 = preprocess_text(slice2)
 
+# Convert slices to TF-IDF vectors
+vectorizer = TfidfVectorizer()
+tfidf_matrix = vectorizer.fit_transform([processed_slice1, processed_slice2])
+
+# Calculate cosine similarity
+cosine_distance = cosine_similarity(tfidf_matrix[0], tfidf_matrix[1])[0][0]
+
+# Set threshold (e.g., 20%)
+threshold = 0.2
+
+# Check if slices are "different enough" based on the threshold
+if cosine_distance > threshold:
+    print("The slices are different enough.")
+else:
+    print("The slices are too similar.")
+
+# Files
+Input File: input.txt
+This text file contains the input text to be processed.
+
+Output Slices: slices_output.txt
+The generated slices are saved in this text file./due to the size, the best option is displaying by file/
+
+
+# Results
+The algorithm generates slices based on the specified criteria and provides coverage for inputs exceeding the context window size.
