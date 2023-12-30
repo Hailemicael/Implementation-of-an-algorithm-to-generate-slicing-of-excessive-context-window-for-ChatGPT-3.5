@@ -55,7 +55,7 @@ threshold = 0.2
 if cosine_distance > threshold:
     print("The slices are different enough.")
 else:
-    print("The slices are too similar.")
+    print("The slices are too similar.") ```
 
 # Files
 Input File: input.txt
