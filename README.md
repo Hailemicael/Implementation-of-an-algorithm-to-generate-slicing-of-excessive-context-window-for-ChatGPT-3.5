@@ -76,8 +76,28 @@ Input File: input.txt
 This text file contains the input text to be processed.
 
 Output Slices: slices_output.txt
-The generated slices are saved in this text file./due to the size, the best option is to display by file/
+The generated slices are saved in this text file./due to the size, the best option is to display by file
 
+# Lama Model Integration
+The processed slices are then integrated into the Lama language model to generate responses
+````python
+import replicate
 
+# Your API token for Lama model
+REPLICATE_API_TOKEN_LAMA = "<your-lama-api-token>"
+client_lama = replicate.Client(api_token=REPLICATE_API_TOKEN_LAMA)
+
+# Read processed slices from slices_output.txt
+with open('slices_output.txt', 'r', encoding='utf-8') as slices_file:
+    slices = [slice.strip() for slice in slices_file.readlines()]
+
+# Processed slices are used as input to Lama model
+for slice_text in slices:
+    response = client_lama.query(slice_text)
+    print(response)
+````
 # Results
-The algorithm generates slices based on the specified criteria and provides coverage for inputs exceeding the context window size.
+The algorithm generates slices based on the specified criteria, processes them, and integrates them into the Lama model to obtain results. 
+
+
+
