@@ -1,4 +1,4 @@
-#Implementation of an algorithm to generate slicing of excessive context window for ChatGPT 3.5
+# Implementation of an algorithm to generate slicing of excessive context window for ChatGPT 3.5
 ## Overview
 
 This project implements an algorithm for generating slicing of an excessive context window for ChatGPT 3.5. The slicing process is based on a specified pipeline to handle inputs that exceed the standard size of the context window.
